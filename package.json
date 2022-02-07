@@ -38,11 +38,11 @@
     "ws": "^8.4.2"
   },
   "scripts": {
-    "server": "pouchdb-server --host 0.0.0.0 -p 8080 -m -d /tmp/pouchdb-server/ -n true",
-    "dev": "PORT=8080 react-scripts start",
+    "server": "pouchdb-server --host 0.0.0.0 -p $PORT -m -d /tmp/pouchdb-server/ -n true",
+    "dev": "PORT=8888 react-scripts start",
     "start": "concurrently \"npm run server\" \"npm run dev\"",
     "build": "react-scripts build",
-    "build:serve": "ws -p 8080 -d build/",
+    "build:serve": "ws -p 8888 -d build/",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
