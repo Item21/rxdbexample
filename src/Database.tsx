@@ -15,8 +15,8 @@ addPouchPlugin(require('pouchdb-adapter-idb'))
 addPouchPlugin(require('pouchdb-adapter-http')) // enable syncing over http
 addRxPlugin(RxDBLeaderElectionPlugin)
 addRxPlugin(RxDBReplicationCouchDBPlugin)
-
-const syncURL = 'http://' + window.location.hostname + ':10102/';
+//10102
+const syncURL = 'http://' + window.location.hostname + ':' + process.env.PORT || 10102 + '/';
 console.log('host: ' + syncURL);
 
 let dbPromise: Promise<RxDatabase> | null = null;
